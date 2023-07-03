@@ -1,0 +1,72 @@
+#! /usr/bin/env python
+# If something bad happens, tell HBL to quit
+import sys, traceback, psp2d, os
+
+if os.path.exists("CONFIG.TXT") == True:
+	open("config.py","w").write(open("CONFIG.TXT","r").read()) # update config file
+	os.remove("CONFIG.TXT")
+
+from config import *
+
+def show_loading():
+	# Show the splashscreen
+	fnt2 = psp2d.Font("font2.png")
+	scr2 = psp2d.Screen()
+	def load():
+		if use_splash == True:
+			load_img = psp2d.Image("load.png")
+			fnt2.drawText(load_img, 270, 50, "WOLOLO.NET")
+			scr2.blit(load_img)
+		elif use_splash == False:
+			alt_load = psp2d.Image(480, 272)
+			alt_load.clear(psp2d.Color(0,0,0))
+			fnt2.drawText(alt_load, 270, 50, "WOLOLO.NET")
+			scr2.blit(alt_load)
+		scr2.swap()
+	load()
+show_loading()
+
+def getRandomNumber():
+	return "0x4F7A"
+
+if os.path.exists("ms0:/pygame") == False:
+	os.mkdir("ms0:/pygame")
+if os.path.exists("ms0:/pygame/tmp") == False:
+	os.mkdir("ms0:/pygame/tmp")
+if os.path.exists("ms0:/pygame/collection") == False:
+	os.mkdir("ms0:/pygame/collection")
+
+try: import pymenu
+except SystemExit:
+	while True: break
+except:
+	traceback.print_exc()
+	scr = psp2d.Screen()
+	fnt = psp2d.Font("font.png")
+	img = psp2d.Image(480, 272)
+	img.clear(psp2d.Color(0,50,255))
+	fnt.drawText(img, 0, 0, "BLUE SCREEN OF DEATH!")
+	fnt.drawText(img, 0, 30, "The menu has crashed")
+	fnt.drawText(img, 0, 60, "For more information see pytrace.txt")
+	fnt.drawText(img, 0, 90, "Press cross to restart")
+	fnt.drawText(img, 0, 120, "Press Circle to launch FTP")
+	fnt.drawText(img, 0, 150, "Random hex number that has nothing to do with the crash: "+getRandomNumber())
+	scr.blit(img)
+	scr.swap()
+	while True:
+		pad = psp2d.Controller()
+		if pad.cross:
+			if force_exit == False:
+				if version == "PRO": main_eboot = "/VBOOT.PBP\n"
+				elif version == "CEF": main_eboot = "/MENU.PBP\n"
+				elif version == "HBL": main_eboot = "/EBOOT.PBP\n"
+				open("ms0:/path.txt","w").write(os.getcwd()+main_eboot)
+				open("ms0:/mode.txt","w").write("HOMEBREW_APP\n")
+			elif force_exit == True:
+				open("ms0:/path.txt","w").write("quit\n")
+				open("ms0:/mode.txt","w").write("NO_APP\n")
+			break
+		elif pad.circle:
+			open("ms0:/path.txt","w").write(os.getcwd()+"/FTP.PBP\n")
+			open("ms0:/mode.txt","w").write("HOMEBREW_APP\n")
+			break

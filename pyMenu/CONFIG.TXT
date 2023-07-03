@@ -1,0 +1,39 @@
+# "simple" and "complete", select from the two different menu styles available
+main_menu = "complete"
+
+# "icon" and "plain", icon shows the icon0.png of the game, plain shows nothing
+game_menu = "icon"
+
+# path of the default background
+default_bg = "defbg.png"
+
+# File browser's root directory
+start_path = "ms0:/"
+
+# path to where the picture files are
+picture_path = "ms0:/PICTURE"
+
+# path to where the music files are by default
+music_path = "ms0:/MUSIC"
+
+# path where the ISOs are by default
+iso_path = "ms0:/ISO"
+
+# Force the menu to exit if a BSoD appears, not recommended for Vita users
+force_exit = False
+
+# Use a splash screen when loading, set to False for a load speedup
+use_splash = True
+
+# The default format of the Music Player, options are: mp3, ogg, wav
+music_player = "mp3"
+
+# DO NOT TOUCH THIS OR THE MENU WILL MALFUNCTION
+version = "PRO"
+
+# Default Menu Language
+default_language = "EN"
+# possible options:
+# EN: english
+# FR: french
+# DE: german

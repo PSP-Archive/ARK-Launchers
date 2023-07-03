@@ -1,0 +1,71 @@
+Game
+Savedata
+Browser
+Picture Viewer
+Music Player
+Plugin Manager
+Python Collection
+Configure
+Exiting...
+Up/Down to scroll
+Cross to enter directory or load eboot
+Circle to go back to ms0:/ or main menu
+R-trigger to open file operation mode
+Copy
+Cut
+Paste
+Delete
+Cancel
+Press R-triger for file options
+<empty>
+Booting...
+Extracting...
+Unknown format
+Installing...
+No Python Game or PYNSTALL.ZIP file found
+Press Select for help
+No eboot found!
+Press Start to delete homebrew
+Press Cross to cancel
+Empty folder
+Add
+Save and Exit
+Discard and Exit
+Could not find CFW Installation in
+Not an ELF/PRX
+Press Cross to remove, Start to delete, Triangle to cancel
+Cross to toggle on/off
+Square to change to umdemu, game or pops
+Triangle to duplicate
+Circle to remove plugin from plugins.txt or delete plugin file
+Directory fix (ONLY FOR PSP)
+Pixel fix
+Button test
+Total missing:
+directories and files fixed
+Press X
+Press Circle
+Press Square
+Press Triangle
+Press Right Trigger
+Press Left Trigger
+Press Start
+Press Select
+Press Left
+Press Right
+Press Up
+Press Down
+DONT PRESS ANYTHING!!!
+Detected input for cross
+Detected input for circle
+Detected input for square
+Detected input for triangle
+Detected input for R-trigger
+Detected input for L-trigger
+Detected input for start
+Detected input for select
+Detected input for up
+Detected input for left
+Detected input for right
+Detected input for down
+Button test finished, quit?
